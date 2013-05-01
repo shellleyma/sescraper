@@ -225,6 +225,11 @@ namespace SEScraper
                 return false;
             }
         }
+        public bool Dispose()
+        {
+            this.Dispose();
+            return true;
+        }
     }
 
 }

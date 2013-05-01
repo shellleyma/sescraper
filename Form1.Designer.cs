@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +57,17 @@
             this.tabProxy = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.tabKeyword.SuspendLayout();
             this.tabOutput.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -67,6 +77,8 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -106,7 +118,7 @@
             this.tabControl.Controls.Add(this.tabOutput);
             this.tabControl.Controls.Add(this.tabLocoy);
             this.tabControl.Controls.Add(this.tabProxy);
-            this.tabControl.Location = new System.Drawing.Point(12, 28);
+            this.tabControl.Location = new System.Drawing.Point(12, 139);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(838, 427);
@@ -124,6 +136,7 @@
             // 
             // tabKeyword
             // 
+            this.tabKeyword.Controls.Add(this.panel3);
             this.tabKeyword.Location = new System.Drawing.Point(4, 22);
             this.tabKeyword.Name = "tabKeyword";
             this.tabKeyword.Padding = new System.Windows.Forms.Padding(3);
@@ -259,6 +272,7 @@
             // 
             // tabLocoy
             // 
+            this.tabLocoy.Controls.Add(this.groupBox4);
             this.tabLocoy.Controls.Add(this.groupBox3);
             this.tabLocoy.Controls.Add(this.groupBox2);
             this.tabLocoy.Location = new System.Drawing.Point(4, 22);
@@ -272,7 +286,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(328, 23);
+            this.groupBox3.Location = new System.Drawing.Point(278, 23);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(239, 121);
             this.groupBox3.TabIndex = 1;
@@ -328,33 +342,112 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnStart);
             this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Location = new System.Drawing.Point(16, 464);
+            this.panel2.Location = new System.Drawing.Point(16, 75);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(834, 58);
             this.panel2.TabIndex = 2;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(15, 18);
+            this.progressBar1.Location = new System.Drawing.Point(194, 14);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(660, 23);
+            this.progressBar1.Size = new System.Drawing.Size(528, 23);
             this.progressBar1.TabIndex = 0;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(19, 14);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 1;
+            this.btnStart.Text = "开始采集";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnExport);
+            this.panel3.Controls.Add(this.btnImport);
+            this.panel3.Location = new System.Drawing.Point(6, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(818, 72);
+            this.panel3.TabIndex = 0;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(24, 15);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.TabIndex = 0;
+            this.btnImport.Text = "导入关键词";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(116, 14);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 1;
+            this.btnExport.Text = "导出关键词";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Location = new System.Drawing.Point(559, 23);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(243, 121);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(105, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(82, 21);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "任务数据库名称";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(194, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 12);
+            this.label4.TabIndex = 2;
+            this.label4.Text = ".db";
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 534);
+            this.ClientSize = new System.Drawing.Size(878, 612);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "main";
             this.Text = "SEScraper";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.tabKeyword.ResumeLayout(false);
             this.tabOutput.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -366,6 +459,9 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,6 +497,14 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
